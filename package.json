@@ -1,0 +1,25 @@
+{
+  "name": "to-do-list-app",
+  "version": "1.0.0",
+  "private": true,
+  "license": "ISC",
+  "author": "P.N.V.Shravan",
+  "main": "/src/app.js",
+  "type": "module",
+  "description": "A to-do-list app built by Claude",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pnvshravan/to-do-list-app.git"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "wrangler": "^4.90.0"
+  },
+  "devDependencies": {
+    "vite": "^8.0.10"
+  }
+}

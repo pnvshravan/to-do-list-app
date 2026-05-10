@@ -1,0 +1,9 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "to-do-list-app",
+  "compatibility_date": "2026-05-09",
+  "pages_build_output_dir": "dist",
+  "observability": {
+    "enabled": true
+  }
+}

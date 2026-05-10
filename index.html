@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Listado — Your Daily Tasks</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <div class="app-shell">
+
+    <!-- ── Header ─────────────────────────────── -->
+    <header class="app-header">
+      <div class="header-left">
+        <span class="logo-mark" aria-hidden="true">✦</span>
+        <h1 class="app-title">Listado</h1>
+      </div>
+      <button
+        id="theme-toggle"
+        class="icon-btn"
+        aria-label="Toggle dark/light mode"
+        title="Toggle dark/light mode"
+      >
+        <span class="theme-icon theme-icon--light" aria-hidden="true">☀︎</span>
+        <span class="theme-icon theme-icon--dark"  aria-hidden="true">☽</span>
+      </button>
+    </header>
+
+    <!-- ── Input area ─────────────────────────── -->
+    <section class="input-section" aria-label="Add a new task">
+      <label for="task-input" class="sr-only">New task</label>
+      <div class="input-wrapper">
+        <span class="input-prefix" aria-hidden="true">+</span>
+        <input
+          id="task-input"
+          type="text"
+          class="task-input"
+          placeholder="What needs to be done?"
+          autocomplete="off"
+          maxlength="200"
+        />
+        <button id="add-btn" class="add-btn" aria-label="Add task">Add</button>
+      </div>
+    </section>
+
+    <!-- ── Filter nav ─────────────────────────── -->
+    <nav class="filter-nav" aria-label="Filter tasks">
+      <button class="filter-btn active" data-filter="all"       aria-current="true">All</button>
+      <button class="filter-btn"        data-filter="active"    aria-current="false">Active</button>
+      <button class="filter-btn"        data-filter="completed" aria-current="false">Completed</button>
+    </nav>
+
+    <!-- ── Task list ──────────────────────────── -->
+    <main>
+      <ul id="task-list" class="task-list" aria-label="Task list" aria-live="polite"></ul>
+
+      <!-- Empty state -->
+      <div id="empty-state" class="empty-state" hidden aria-live="polite">
+        <div class="empty-illustration" aria-hidden="true">
+          <svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="12" y="8" width="48" height="56" rx="4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-dasharray="4 3"/>
+            <line x1="22" y1="24" x2="50" y2="24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="22" y1="34" x2="44" y2="34" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="22" y1="44" x2="38" y2="44" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <circle cx="54" cy="54" r="10" fill="var(--accent)" opacity="0.15"/>
+            <path d="M50 54 L53 57 L58 51" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <p class="empty-title" id="empty-title">All clear!</p>
+        <p class="empty-sub"  id="empty-sub">Add a task above to get started.</p>
+      </div>
+    </main>
+
+    <!-- ── Footer bar ─────────────────────────── -->
+    <footer class="app-footer" id="app-footer" hidden>
+      <span id="tasks-left-label" class="tasks-left" aria-live="polite" aria-atomic="true"></span>
+      <button id="clear-completed-btn" class="ghost-btn" hidden aria-label="Clear all completed tasks">
+        Clear completed
+      </button>
+    </footer>
+
+  </div>
+
+  <script type="module" src="/src/app.js"></script>
+  
+</body>
+</html>
